@@ -10,7 +10,7 @@ public class SingleTest extends BrowserStackTestNGTest {
 
     @Test
     public void test() throws Exception {
-    	// navigate to bstackdemo
+    	  // navigate to bstackdemo
         driver.get("https://www.bstackdemo.com");
         
         // Check the title
