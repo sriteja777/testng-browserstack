@@ -26,31 +26,8 @@ public class BrowserStackRemoteTest {
     @SuppressWarnings("unchecked")
     public void setUp(String config_file, String platform) throws Exception {
         JSONParser parser = new JSONParser();
-        JSONObject config;
-        JSONArray platforms;
-        if (!config_file.isEmpty()) {
-            config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + config_file));
-            platforms = (JSONArray) config.get("platforms");
-        } else {
-            config = (JSONObject) parser.parse("{}");
-            String cliHub = System.getProperty("hub");
-            if (cliHub.isEmpty()) {
-                cliHub = "hub.browserstack.com";
-            }
-            config.put("server", cliHub);
-            String cliUser = System.getProperty("userName");
-            if (!cliUser.isEmpty()) {
-                config.put("user", cliUser);
-            }
-            String cliKey = System.getProperty("accessKey");
-            if (!cliKey.isEmpty()) {
-                config.put("key", cliKey);
-            }
-            JSONObject cliCaps = (JSONObject) parser.parse(System.getProperty("caps").replaceAll("'", "\""));
-            config.put("capabilities", cliCaps);
-            JSONArray cliplatforms = (JSONArray) parser.parse(System.getProperty("platforms").replaceAll("'", "\""));
-            platforms = cliplatforms;
-        }
+        JSONObject config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + config_file));
+        JSONArray platforms = (JSONArray) config.get("platforms");;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         Map<String, String> envCapabilities = (Map<String, String>) platforms.get(Integer.parseInt(platform));
