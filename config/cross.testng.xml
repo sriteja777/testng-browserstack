@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Cross-Platform">
+    <listeners>
+        <listener class-name="XMLSuiteClassInterceptor"/>
+    </listeners>
+    <test name="PoolTest1" parallel="classes" thread-count="2">
+        <parameter name="config" value="cross.conf.json"/>
+        <classes>
+            <class name="com.browserstack.suite.SuiteTest01"/>
+        </classes>
+    </test>
+    <test name="PoolTest2" parallel="classes" thread-count="2">
+        <parameter name="config" value="cross.conf.json"/>
+        <classes>
+            <class name="com.browserstack.suite.SuiteTest01"/>
+            <class name="com.browserstack.suite.SuiteTest02"/>
+        </classes>
+    </test>
+</suite>
+
