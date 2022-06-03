@@ -19,7 +19,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
 - To run a single test, run `mvn test -P single`
 - To run local tests, run `mvn test -P local`
 - To run parallel tests, run `mvn test -P parallel`
-- To run the test suite, run `mvn test -P suite`
+- To run the test suite having cross-platform with parallelization, run `mvn test -P cross`
 
  Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
  
@@ -37,7 +37,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
 - To run a single test, run `gradle singleTest`
 - To run local tests, run `gradle localTest`
 - To run parallel tests, run `gradle parallelTest`
-- To run the test suite, run `gradle suiteTest`
+- To run the test suite having cross-platform with parallelization, run `gradle crossTest`
 
  Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
 
