@@ -14,9 +14,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
+        <testng.version>7.4.0</testng.version>
         <surefire.version>2.19.1</surefire.version>
-
-        <test.file></test.file>
+        <selenium.version>3.141.59</selenium.version>
+        <json-simple.version>1.1.1</json-simple.version>
+        <browserstack-local-java.version>1.0.6</browserstack-local-java.version>
+        <test.file/>
         <config.file>default</config.file>
     </properties>
 
@@ -24,7 +27,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.9.10</version>
+            <version>${testng.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -34,17 +37,17 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.12.0</version>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>com.browserstack</groupId>
             <artifactId>browserstack-local-java</artifactId>
-            <version>1.0.3</version>
+            <version>${browserstack-local-java.version}</version>
         </dependency>
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
-            <version>1.1.1</version>
+            <version>${json-simple.version}</version>
         </dependency>
     </dependencies>
 
@@ -53,7 +56,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.18.1</version>
+                <version>${surefire.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -117,7 +120,6 @@
                 </plugins>
             </build>
         </profile>
-
         <profile>
             <id>suite</id>
             <build>
@@ -141,11 +143,19 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.19.1</version>
                         <configuration>
                             <suiteXmlFiles>
                                 <suiteXmlFile>config/cross.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.aspectj</groupId>
+                                <artifactId>aspectjweaver</artifactId>
+                                <version>1.9.6</version>
+                            </dependency>
+                        </dependencies>
                     </plugin>
                 </plugins>
             </build>

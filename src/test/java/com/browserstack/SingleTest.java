@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SingleTest extends BrowserStackTestNGTest {
+public class SingleTest extends BrowserStackRemoteTest {
 
     @Test
     public void test() throws Exception {

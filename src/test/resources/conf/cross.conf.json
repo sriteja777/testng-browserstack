@@ -1,12 +1,12 @@
 {
-  "server": "hub-cloud.browserstack.com",
+  "server": "hub.browserstack.com",
   "user": "BROWSERSTACK_USERNAME",
   "key": "BROWSERSTACK_ACCESS_KEY",
 
   "capabilities": {
     "build": "browserstack-build-1",
     "name": "cross_platform_test",
-    "browserstack.debug": true
+    "browserstack.debug": "true"
   },
 
   "platforms": [
@@ -14,22 +14,19 @@
       "os": "OS X",
       "os_version": "Big Sur",
       "browser": "Chrome",
-      "browser_version": "latest",
-      "browserstack.selenium_version": "3.141.59"
+      "browser_version": "latest"
     },
     {
       "os": "OS X",
       "os_version": "Catalina",
       "browser": "Safari",
-      "browser_version": "latest",
-      "browserstack.selenium_version": "3.141.59"
+      "browser_version": "latest"
     },
     {
-      "os": "OS X",
-      "os_version": "Mojave",
+      "os": "Windows",
+      "os_version": "11",
       "browser": "Firefox",
-      "browser_version": "latest",
-      "browserstack.selenium_version": "3.141.59"
+      "browser_version": "latest"
     }
   ]
 }

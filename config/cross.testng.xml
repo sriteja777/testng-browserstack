@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Cross-Platform">
+<suite name="Cross-Platform" thread-count="3" parallel="tests">
+    <parameter name="config" value="cross.conf.json"/>
     <listeners>
-        <listener class-name="XMLSuiteClassInterceptor"/>
+        <listener class-name="AlterSuiteClassInterceptor"/>
+        <listener class-name="SuiteClassIntercepter"/>
     </listeners>
-    <test name="PoolTest1" parallel="classes" thread-count="2">
-        <parameter name="config" value="cross.conf.json"/>
+    <test name="PoolTest0">
         <classes>
-            <class name="com.browserstack.suite.SuiteTest01"/>
+            <class name="com.browserstack.suite.SuiteTest01" />
+            <class name="com.browserstack.suite.SuiteTest02" />
         </classes>
     </test>
-    <test name="PoolTest2" parallel="classes" thread-count="2">
+    <test name="PoolTest1">
+        <classes>
+            <class name="com.browserstack.suite.SuiteTest03" />
+            <class name="com.browserstack.suite.SuiteTest04" />
+        </classes>
+    </test>
+    <test name="PoolTest2">
         <parameter name="config" value="cross.conf.json"/>
         <classes>
-            <class name="com.browserstack.suite.SuiteTest01"/>
-            <class name="com.browserstack.suite.SuiteTest02"/>
+            <class name="com.browserstack.suite.SuiteTest05" />
+            <class name="com.browserstack.suite.SuiteTest06" />
+        </classes>
+    </test>
+    <test name="PoolTest3">
+        <parameter name="config" value="cross.conf.json"/>
+        <classes>
+            <class name="com.browserstack.suite.SuiteTest07" />
+            <class name="com.browserstack.suite.SuiteTest08" />
+        </classes>
+    </test>
+    <test name="PoolTest4">
+        <parameter name="config" value="cross.conf.json"/>
+        <classes>
+            <class name="com.browserstack.suite.SuiteTest09" />
+            <class name="com.browserstack.suite.SuiteTest10" />
         </classes>
     </test>
 </suite>
-
