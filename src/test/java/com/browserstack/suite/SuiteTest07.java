@@ -7,7 +7,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SuiteTest07 extends BrowserStackRemoteTest {
-
     @Test
     public void test_07() throws Exception {
     	  // navigate to bstackdemo
