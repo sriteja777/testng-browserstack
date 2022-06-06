@@ -14,22 +14,25 @@ public class SuiteClassIntercepter implements ISuiteListener {
 
     @Override
     public void onStart(ISuite iSuite) {
-        String configFile = iSuite.getParameter("config");
+        String profile = iSuite.getParameter("profile");
         try {
             JSONParser parser = new JSONParser();
-            JSONObject config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + configFile));
-            Map<String, String> commonCapabilities = (Map<String, String>) config.get("capabilities");
-            if (commonCapabilities.get("browserstack.local") != null
-                    && Objects.equals(commonCapabilities.get("browserstack.local"), "true")) {
-                System.out.println("Starting BrowserStack Local...");
-                local = new Local();
-                Map<String, String> options = new HashMap<String, String>();
-                options.put("key", config.get("key").toString());
-                if (!local.isRunning()) {
-                    local.start(options);
-                    Runtime.getRuntime().addShutdownHook(new SuiteClassIntercepter.Closer(local));
+            JSONObject config = (JSONObject) parser.parse(new FileReader("config/browserstack.conf.json"));
+            Map<String, Map<String, String>> profiles = (Map<String, Map<String, String>>) (config.get("profiles"));
+            if (profile != null) {
+                Map<String, String> profileMap = profiles.get(profile);
+                if (profileMap.get("browserstack.local") != null
+                        && Objects.equals(profileMap.get("browserstack.local"), "true")) {
+                    System.out.println("Starting BrowserStack Local...");
+                    local = new Local();
+                    Map<String, String> options = new HashMap<String, String>();
+                    options.put("key", config.get("key").toString());
+                    if (!local.isRunning()) {
+                        local.start(options);
+                        Runtime.getRuntime().addShutdownHook(new SuiteClassIntercepter.Closer(local));
+                    }
+                    System.out.println("BrowserStack Local Started Successfully.");
                 }
-                System.out.println("BrowserStack Local Started Successfully.");
             }
         } catch (Exception e) {
             throw new RuntimeException(e);

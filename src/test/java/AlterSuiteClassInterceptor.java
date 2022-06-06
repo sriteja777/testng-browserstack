@@ -21,9 +21,8 @@ public class AlterSuiteClassInterceptor implements IAlterSuiteListener {
         suites.forEach(suite -> {
             int platformLength = 0;
             JSONArray platforms;
-            String configFile = suite.getParameter("config");
             try {
-                JSONObject config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + configFile));
+                JSONObject config = (JSONObject) parser.parse(new FileReader("config/browserstack.conf.json"));
                 if (!config.isEmpty()) {
                     platforms = (JSONArray) config.get("platforms");
                     platformLength = platforms.size();
@@ -34,7 +33,6 @@ public class AlterSuiteClassInterceptor implements IAlterSuiteListener {
             int finalPlatformLength = platformLength;
             modifySuiteXML(suite, finalPlatformLength);
         });
-
     }
 
     private static void modifySuiteXML(XmlSuite suite, int numberOfPlatforms) {

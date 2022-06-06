@@ -18,17 +18,17 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 
 public class BrowserStackRemoteTest {
     public WebDriver driver;
-    private Local l;
 
     @BeforeMethod(alwaysRun = true)
-    @org.testng.annotations.Parameters(value = { "config", "platform" })
+    @org.testng.annotations.Parameters(value = { "profile", "platform" })
     @SuppressWarnings("unchecked")
-    public void setUp(String config_file, String platform) throws Exception {
+    public void setUp(@Optional("") String profile, String platform) throws Exception {
         JSONParser parser = new JSONParser();
-        JSONObject config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + config_file));
+        JSONObject config = (JSONObject) parser.parse(new FileReader("config/browserstack.conf.json"));
         DesiredCapabilities capabilities = new DesiredCapabilities();
         JSONArray platforms = (JSONArray) config.get("platforms");
 
@@ -45,6 +45,18 @@ public class BrowserStackRemoteTest {
             Map.Entry pair = (Map.Entry) it.next();
             if (capabilities.getCapability(pair.getKey().toString()) == null) {
                 capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
+            }
+        }
+
+        if (!profile.equals("")) {
+            Map<String, Map<String, String>> profiles = (Map<String, Map<String, String>>) (config.get("profiles"));
+            Map<String, String> profileMap = profiles.get(profile);
+            it = profileMap.entrySet().iterator();
+            while (it.hasNext()) {
+                Map.Entry pair = (Map.Entry) it.next();
+                if (capabilities.getCapability(pair.getKey().toString()) == null) {
+                    capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
+                }
             }
         }
 

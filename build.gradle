@@ -21,22 +21,6 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-task singleTest(type: Test) {
-    useTestNG() {
-      dependsOn cleanTest
-      useDefaultListeners = true
-      suites "config/single.testng.xml"
-    }
-}
-
-task localTest(type: Test) {
-    useTestNG() {
-      dependsOn cleanTest
-      useDefaultListeners = true
-      suites "config/local.testng.xml"
-    }
-}
-
 task parallelTest(type: Test) {
     useTestNG() {
       dependsOn cleanTest
@@ -45,18 +29,10 @@ task parallelTest(type: Test) {
     }
 }
 
-task suiteTest(type: Test) {
+task localTest(type: Test) {
     useTestNG() {
       dependsOn cleanTest
       useDefaultListeners = true
-      suites "config/suite.testng.xml"
-    }
-}
-
-task crossTest(type: Test) {
-    useTestNG() {
-        dependsOn cleanTest
-        useDefaultListeners = true
-        suites "config/cross.testng.xml"
+      suites "config/local.testng.xml"
     }
 }

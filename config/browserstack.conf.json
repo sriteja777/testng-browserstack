@@ -5,8 +5,14 @@
 
   "capabilities": {
     "build": "browserstack-build-1",
-    "name": "cross_platform_test",
+    "name": "sample_test",
     "browserstack.debug": "true"
+  },
+
+  "profiles": {
+    "localprofile": {
+      "browserstack.local": "true"
+    }
   },
 
   "platforms": [
