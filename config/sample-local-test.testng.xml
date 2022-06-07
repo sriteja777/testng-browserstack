@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Local">
     <parameter name="profile" value="localprofile"/>
-    <listeners>
-        <listener class-name="SuiteClassIntercepter"/>
-    </listeners>
+<!--    <listeners>-->
+<!--        <listener class-name="SuiteClassIntercepter"/>-->
+<!--    </listeners>-->
     <test name="LocalTest">
         <parameter name="platform" value="0"/>
         <classes>
