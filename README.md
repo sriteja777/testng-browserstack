@@ -63,6 +63,21 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
 
 * Clone the repo
 * Install dependencies `gradle build`
+* Following are the changes required in `gradle.build` -
+  * Add `compileOnly 'com.browserstack:browserstack-java-sdk:1.0.1'` in dependencies
+  * Create `def browserstackSDKArtifact = configurations.compileClasspath.resolvedConfiguration.resolvedArtifacts.find { it.name == 'browserstack-java-sdk' }`
+  * Modify Task *SampleTest* and *SampleLocalTest* as :
+  ```
+  task sampleTest(type: Test) {
+    useTestNG() {
+      dependsOn cleanTest
+      useDefaultListeners = true
+      suites "config/sample-test.testng.xml"
+        jvmArgs "-javaagent:${browserstackSDKArtifact.file}"
+    }
+  }
+  ```
+
 
 ### Running your tests
 

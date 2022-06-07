@@ -10,12 +10,15 @@ dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
     implementation 'com.browserstack:browserstack-local-java:1.0.6'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    compileOnly 'com.browserstack:browserstack-java-sdk:1.0.1'
 }
 
 group = 'com.browserstack'
 version = '1.0-SNAPSHOT'
 description = 'testng-browserstack'
 sourceCompatibility = '1.8'
+
+def browserstackSDKArtifact = configurations.compileClasspath.resolvedConfiguration.resolvedArtifacts.find { it.name == 'browserstack-java-sdk' }
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -26,13 +29,15 @@ task sampleTest(type: Test) {
       dependsOn cleanTest
       useDefaultListeners = true
       suites "config/sample-test.testng.xml"
+        jvmArgs "-javaagent:${browserstackSDKArtifact.file}"
     }
 }
 
 task sampleLocalTest(type: Test) {
     useTestNG() {
-      dependsOn cleanTest
-      useDefaultListeners = true
-      suites "config/sample-local-test.testng.xml"
+        dependsOn cleanTest
+        useDefaultListeners = true
+        suites "config/sample-local-test.testng.xml"
+        jvmArgs "-javaagent:${browserstackSDKArtifact.file}"
     }
 }
