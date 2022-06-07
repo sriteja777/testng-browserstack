@@ -50,12 +50,19 @@ public class BrowserStackRemoteTest {
 
         if (!profile.equals("")) {
             Map<String, Map<String, String>> profiles = (Map<String, Map<String, String>>) (config.get("profiles"));
-            Map<String, String> profileMap = profiles.get(profile);
+            Map<String, ?> profileMap = profiles.get(profile);
             it = profileMap.entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry) it.next();
                 if (capabilities.getCapability(pair.getKey().toString()) == null) {
-                    capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
+                    if(pair.getKey().toString().equals("localOptions")) {
+                        Map<String, String> localOptionsMap = (Map<String, String>) profileMap.get(pair.getKey().toString());
+                        if (localOptionsMap.get("localIdentifier") != null) {
+                            capabilities.setCapability("browserstack.localIdentifier", localOptionsMap.get("localIdentifier"));
+                        }
+                    } else {
+                        capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
+                    }
                 }
             }
         }

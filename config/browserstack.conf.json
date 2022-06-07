@@ -11,7 +11,10 @@
 
   "profiles": {
     "localprofile": {
-      "browserstack.local": "true"
+      "browserstack.local": "true",
+      "localOptions": {
+        "localIdentifier": "kamal"
+      }
     }
   },
 

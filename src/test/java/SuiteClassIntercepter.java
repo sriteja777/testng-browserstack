@@ -20,13 +20,19 @@ public class SuiteClassIntercepter implements ISuiteListener {
             JSONObject config = (JSONObject) parser.parse(new FileReader("config/browserstack.conf.json"));
             Map<String, Map<String, String>> profiles = (Map<String, Map<String, String>>) (config.get("profiles"));
             if (profile != null) {
-                Map<String, String> profileMap = profiles.get(profile);
+                Map<String, ?> profileMap = profiles.get(profile);
                 if (profileMap.get("browserstack.local") != null
                         && Objects.equals(profileMap.get("browserstack.local"), "true")) {
                     System.out.println("Starting BrowserStack Local...");
                     local = new Local();
                     Map<String, String> options = new HashMap<String, String>();
                     options.put("key", config.get("key").toString());
+                    if (profileMap.get("localOptions") != null) {
+                        Map<String, ?> browserStackLocalOptionsMap = (Map<String, ?>) (profileMap.get("localOptions"));
+                        for (Map.Entry<String,?> entry : browserStackLocalOptionsMap.entrySet()) {
+                            options.put(entry.getKey(), String.valueOf(entry.getValue()));
+                        }
+                    }
                     if (!local.isRunning()) {
                         local.start(options);
                         Runtime.getRuntime().addShutdownHook(new SuiteClassIntercepter.Closer(local));
