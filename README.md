@@ -10,6 +10,13 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
 
 ### Run sample build
 
+- To run the test suite having cross-platform with parallelization, run `mvn test -P sample-test`
+- To run local tests, run `mvn test -P sample-local-test`
+
+Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
+
+### Integrate your test suite
+
 * Clone the repo
 * Install dependencies `mvn compile`
 * Create sample browserstack.yml file with the browserstack related capabilities with your [BrowserStack Username and Access Key](https://www.browserstack.com/accounts/settings) and place it in your root folder.
@@ -49,18 +56,17 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
                 </configuration>
             </plugin>
 ```
-
-### Integrate your test suite
-
-- To run the test suite having cross-platform with parallelization, run `mvn test -P sample-test`
-- To run local tests, run `mvn test -P sample-local-test`
-
- Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
- 
  
  ## Using Gradle
+
+### Run sample build
+
+- To run the test suite having cross-platform with parallelization, run `gradle sampleTest`
+- To run local tests, run `gradle sampleLocalTest`
+
+Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
  
- ### Run sample build
+ ### Integrate your test suite
 
 * Clone the repo
 * Install dependencies `gradle build`
@@ -78,14 +84,6 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
     }
   }
   ```
-
-
-### Integrate your test suite
-
-- To run the test suite having cross-platform with parallelization, run `gradle sampleTest`
-- To run local tests, run `gradle sampleLocalTest`
-
- Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
 
 
 ## Notes
