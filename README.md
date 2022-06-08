@@ -8,7 +8,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
 
 ## Using Maven
 
-### Setup
+### Integrate your test suite
 
 * Clone the repo
 * Install dependencies `mvn compile`
@@ -20,7 +20,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
     <artifactId>browserstack-java-sdk</artifactId>
     <version>LATEST</version>
     <scope>compile</scope>
-</dependency
+</dependency>
 ```
 * Modify your build plugin to run tests by adding argLine `-javaagent:${com.browserstack:browserstack-java-sdk:jar}` and `maven-dependency-plugin` for resolving dependencies in the profiles `sample-test` and `sample-local-test`.
 ```
@@ -50,7 +50,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
             </plugin>
 ```
 
-### Running your tests
+### Run sample build
 
 - To run the test suite having cross-platform with parallelization, run `mvn test -P sample-test`
 - To run local tests, run `mvn test -P sample-local-test`
@@ -60,7 +60,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
  
  ## Using Gradle
  
- ### Setup
+ ### Integrate your test suite
 
 * Clone the repo
 * Install dependencies `gradle build`
@@ -80,7 +80,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
   ```
 
 
-### Running your tests
+### Run sample build
 
 - To run the test suite having cross-platform with parallelization, run `gradle sampleTest`
 - To run local tests, run `gradle sampleLocalTest`
