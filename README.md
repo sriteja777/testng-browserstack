@@ -8,7 +8,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
 
 ## Using Maven
 
-### Integrate your test suite
+### Run sample build
 
 * Clone the repo
 * Install dependencies `mvn compile`
@@ -50,7 +50,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
             </plugin>
 ```
 
-### Run sample build
+### Integrate your test suite
 
 - To run the test suite having cross-platform with parallelization, run `mvn test -P sample-test`
 - To run local tests, run `mvn test -P sample-local-test`
@@ -60,7 +60,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
  
  ## Using Gradle
  
- ### Integrate your test suite
+ ### Run sample build
 
 * Clone the repo
 * Install dependencies `gradle build`
@@ -80,7 +80,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
   ```
 
 
-### Run sample build
+### Integrate your test suite
 
 - To run the test suite having cross-platform with parallelization, run `gradle sampleTest`
 - To run local tests, run `gradle sampleLocalTest`
