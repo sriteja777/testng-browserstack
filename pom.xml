@@ -19,7 +19,7 @@
         <selenium.version>3.141.59</selenium.version>
         <json-simple.version>1.1.1</json-simple.version>
         <browserstack-local-java.version>1.0.6</browserstack-local-java.version>
-        <config.file>config/sample-local-test.testng.xml</config.file>
+        <config.file>config/local.testng.xml</config.file>
     </properties>
 
     <dependencies>
@@ -75,7 +75,7 @@
 
     <profiles>
         <profile>
-            <id>sample-local-test</id>
+            <id>local</id>
             <build>
                 <plugins>
                     <plugin>
@@ -83,7 +83,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>config/sample-local-test.testng.xml</suiteXmlFile>
+                                <suiteXmlFile>config/local.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
@@ -92,7 +92,7 @@
         </profile>
 
         <profile>
-            <id>sample-test</id>
+            <id>parallel</id>
             <build>
                 <plugins>
                     <plugin>
@@ -100,7 +100,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>config/sample-test.testng.xml</suiteXmlFile>
+                                <suiteXmlFile>config/parallel.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>

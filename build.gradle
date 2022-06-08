@@ -21,18 +21,18 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-task sampleTest(type: Test) {
+task parallelTest(type: Test) {
     useTestNG() {
       dependsOn cleanTest
       useDefaultListeners = true
-      suites "config/sample-test.testng.xml"
+      suites "config/parallel.testng.xml"
     }
 }
 
-task sampleLocalTest(type: Test) {
+task localTest(type: Test) {
     useTestNG() {
       dependsOn cleanTest
       useDefaultListeners = true
-      suites "config/sample-local-test.testng.xml"
+      suites "config/local.testng.xml"
     }
 }
