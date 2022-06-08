@@ -26,9 +26,9 @@ tasks.withType(JavaCompile) {
 
 task sampleTest(type: Test) {
     useTestNG() {
-      dependsOn cleanTest
-      useDefaultListeners = true
-      suites "config/sample-test.testng.xml"
+        dependsOn cleanTest
+        useDefaultListeners = true
+        suites "config/sample-test.testng.xml"
         jvmArgs "-javaagent:${browserstackSDKArtifact.file}"
     }
 }
