@@ -1,38 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Cross-Platform" thread-count="3" parallel="tests">
-    <listeners>
-        <listener class-name="AlterSuiteClassInterceptor"/>
-        <listener class-name="SuiteClassIntercepter"/>
-    </listeners>
-    <test name="PoolTest0">
+<suite name="Parallel" thread-count="3" parallel="tests">
+    <test name="SingleTestEnv1">
+        <parameter name="config" value="parallel.conf.json"/>
+        <parameter name="environment" value="env1"/>
         <classes>
-            <class name="com.browserstack.suite.SuiteTest01" />
-            <class name="com.browserstack.suite.SuiteTest02" />
+            <class name="com.browserstack.SingleTest"/>
         </classes>
     </test>
-    <test name="PoolTest1">
+
+    <test name="SingleTestEnv2">
+        <parameter name="config" value="parallel.conf.json"/>
+        <parameter name="environment" value="env2"/>
         <classes>
-            <class name="com.browserstack.suite.SuiteTest03" />
-            <class name="com.browserstack.suite.SuiteTest04" />
+            <class name="com.browserstack.SingleTest"/>
         </classes>
     </test>
-    <test name="PoolTest2">
+
+    <test name="SingleTestEnv3">
+        <parameter name="config" value="parallel.conf.json"/>
+        <parameter name="environment" value="env3"/>
         <classes>
-            <class name="com.browserstack.suite.SuiteTest05" />
-            <class name="com.browserstack.suite.SuiteTest06" />
-        </classes>
-    </test>
-    <test name="PoolTest3">
-        <classes>
-            <class name="com.browserstack.suite.SuiteTest07" />
-            <class name="com.browserstack.suite.SuiteTest08" />
-        </classes>
-    </test>
-    <test name="PoolTest4">
-        <classes>
-            <class name="com.browserstack.suite.SuiteTest09" />
-            <class name="com.browserstack.suite.SuiteTest10" />
+            <class name="com.browserstack.SingleTest"/>
         </classes>
     </test>
 </suite>

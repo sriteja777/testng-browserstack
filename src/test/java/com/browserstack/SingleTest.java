@@ -1,4 +1,4 @@
-package com.browserstack.suite;
+package com.browserstack;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -6,12 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.browserstack.BrowserStackTestNGTest;
-
-public class SuiteTest07 extends BrowserStackTestNGTest {
+public class SingleTest extends BrowserStackTestNGTest {
 
     @Test
-    public void test_07() throws Exception {
+    public void test() throws Exception {
     	  // navigate to bstackdemo
         driver.get("https://www.bstackdemo.com");
         
