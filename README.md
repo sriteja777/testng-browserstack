@@ -19,6 +19,7 @@ Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol**
     <groupId>com.browserstack</groupId>
     <artifactId>browserstack-java-sdk</artifactId>
     <version>LATEST</version>
+    <scope>compile</scope>
 </dependency
 ```
 * Modify your build plugin to run tests by adding argLine `-javaagent:${com.browserstack:browserstack-java-sdk:jar}` and `maven-dependency-plugin` for resolving dependencies in the profiles `sample-test` and `sample-local-test`.
