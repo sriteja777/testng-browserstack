@@ -73,7 +73,7 @@ Understand how many parallel sessions you need by using our [Parallel Test Calcu
 
 * Install dependencies `gradle build`
 * Following are the changes required in `gradle.build` -
-  * Add `compileOnly 'com.browserstack:browserstack-java-sdk:1.0.1'` in dependencies
+  * Add `compileOnly 'com.browserstack:browserstack-java-sdk:latest.release'` in dependencies
   * Fetch Artifact Information and add `jvmArgs` property in tasks *SampleTest* and *SampleLocalTest* :
   ```
   def browserstackSDKArtifact = configurations.compileClasspath.resolvedConfiguration.resolvedArtifacts.find { it.name == 'browserstack-java-sdk' }

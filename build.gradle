@@ -10,7 +10,7 @@ dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
     implementation 'com.browserstack:browserstack-local-java:1.0.6'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
-    compileOnly 'com.browserstack:browserstack-java-sdk:1.0.1'
+    compileOnly 'com.browserstack:browserstack-java-sdk:latest.release'
 }
 
 group = 'com.browserstack'
