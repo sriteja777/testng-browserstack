@@ -1,12 +1,14 @@
 package com.browserstack.suite;
 
-import com.browserstack.BrowserStackRemoteTest;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SuiteTest10 extends BrowserStackRemoteTest {
+import com.browserstack.BrowserStackTestNGTest;
+
+public class SuiteTest10 extends BrowserStackTestNGTest {
 
   @Test
   public void test_10() throws Exception {
