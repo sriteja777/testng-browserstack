@@ -18,7 +18,8 @@ Understand how many parallel sessions you need by using our [Parallel Test Calcu
 
 ### Integrate your test suite
 
-* Install dependencies `mvn compile`
+This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow the steps below to install the SDK in your test suite and run tests on BrowserStack:
+
 * Create sample browserstack.yml file with the browserstack related capabilities with your [BrowserStack Username and Access Key](https://www.browserstack.com/accounts/settings) and place it in your root folder.
 * Add maven dependency of browserstack-java-sdk in your pom.xml file
 ```sh
@@ -56,6 +57,7 @@ Understand how many parallel sessions you need by using our [Parallel Test Calcu
                 </configuration>
             </plugin>
 ```
+* Install dependencies `mvn compile`
  
  ## Using Gradle
 
@@ -69,8 +71,9 @@ Understand how many parallel sessions you need by using our [Parallel Test Calcu
 Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
  
  ### Integrate your test suite
+ 
+This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow the steps below to install the SDK in your test suite and run tests on BrowserStack:
 
-* Install dependencies `gradle build`
 * Following are the changes required in `gradle.build` -
   * Add `compileOnly 'com.browserstack:browserstack-java-sdk:latest.release'` in dependencies
   * Fetch Artifact Information and add `jvmArgs` property in tasks *SampleTest* and *SampleLocalTest* :
@@ -86,6 +89,8 @@ Understand how many parallel sessions you need by using our [Parallel Test Calcu
     }
   }
   ```
+  
+* Install dependencies `gradle build`
 
 
 ## Notes
