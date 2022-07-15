@@ -13,25 +13,19 @@
 
   "environments": {
     "chrome": {
-      "bstack:options": {
         "browserName": "chrome"
-      }
     },
     "firefox": {
-      "bstack:options": {
         "browserName": "firefox"
-      }
     },
     "safari": {
       "bstack:options": {
-        "os": "OS X",
-        "browserName": "safari"
-      }
+        "os": "OS X"
+      },
+      "browserName": "safari"
     },
     "ie": {
-      "bstack:options": {
         "browserName": "internet explorer"
-      }
     }
   }
 }

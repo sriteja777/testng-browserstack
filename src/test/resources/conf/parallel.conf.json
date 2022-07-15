@@ -14,20 +14,16 @@
 
   "environments": {
     "env1": {
-      "bstack:options": {
         "browserName": "chrome"
-      }
     },
     "env2": {
-      "bstack:options": {
         "browserName": "firefox"
-      }
     },
     "env3": {
       "bstack:options": {
-        "os": "OS X",
-        "browserName": "safari"
-      }
+        "os": "OS X"
+      },
+      "browserName": "safari"
     }
   }
 }
