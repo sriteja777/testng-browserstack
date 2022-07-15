@@ -34,7 +34,7 @@ public class BrowserStackTestNGTest {
         Iterator it = envCapabilities.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
-            capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
+            capabilities.setCapability(pair.getKey().toString(), pair.getValue());
         }
 
         Map<String, String> commonCapabilities = (Map<String, String>) config.get("capabilities");
@@ -42,7 +42,11 @@ public class BrowserStackTestNGTest {
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
             if (capabilities.getCapability(pair.getKey().toString()) == null) {
-                capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
+                capabilities.setCapability(pair.getKey().toString(), pair.getValue());
+            } else if (pair.getKey().toString().equalsIgnoreCase("bstack:options")) {
+                HashMap bstackOptionsMap = (HashMap) pair.getValue();
+               bstackOptionsMap.putAll((HashMap) capabilities.getCapability("bstack:options"));
+               capabilities.setCapability(pair.getKey().toString(), bstackOptionsMap);
             }
         }
 
@@ -56,12 +60,14 @@ public class BrowserStackTestNGTest {
             accessKey = (String) config.get("key");
         }
 
-        if (capabilities.getCapability("browserstack.local") != null
-                && capabilities.getCapability("browserstack.local") == "true") {
-            l = new Local();
-            Map<String, String> options = new HashMap<String, String>();
-            options.put("key", accessKey);
-            l.start(options);
+        if (capabilities.getCapability("bstack:options") != null) {
+            HashMap bstackOptionsMap = (HashMap) capabilities.getCapability("bstack:options");
+            if (bstackOptionsMap.get("local").toString().equalsIgnoreCase("true")) {
+                l = new Local();
+                Map<String, String> options = new HashMap<String, String>();
+                options.put("key", accessKey);
+                l.start(options);
+            }
         }
 
         driver = new RemoteWebDriver(
