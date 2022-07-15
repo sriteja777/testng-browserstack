@@ -62,7 +62,7 @@ public class BrowserStackTestNGTest {
 
         if (capabilities.getCapability("bstack:options") != null) {
             HashMap bstackOptionsMap = (HashMap) capabilities.getCapability("bstack:options");
-            if (bstackOptionsMap.get("local") != null && bstackOptionsMap.get("local").toString().equalsIgnoreCase("true")) {
+            if ((bstackOptionsMap.get("local") != null && bstackOptionsMap.get("local").toString().equalsIgnoreCase("true")) || (capabilities.getCapability("browserstack.local") != null && capabilities.getCapability("browserstack.local").toString().equalsIgnoreCase("true"))) {
                 l = new Local();
                 Map<String, String> options = new HashMap<String, String>();
                 options.put("key", accessKey);
