@@ -6,6 +6,7 @@ local.log
 .gradle
 build/
 .DS_Store
+browserstack.err
 gradle
 gradlew
 gradlew.bat
