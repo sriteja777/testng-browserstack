@@ -11,3 +11,7 @@ gradle
 gradlew
 gradlew.bat
 logs
+.classpath
+.project
+.settings
+test-output
