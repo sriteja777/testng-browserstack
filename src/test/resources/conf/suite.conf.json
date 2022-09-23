@@ -7,6 +7,7 @@
     "bstack:options": {
       "buildName": "browserstack-build-1",
       "sessionName": "suite_test",
+      "source": "testng:sample-master-v1.0",
       "debug": true
     }
   },

@@ -1,6 +1,6 @@
 {
   "server": "hub-cloud.browserstack.com",
-  "user": "BROWSERSTACK_USERNAME",
+s  "user": "BROWSERSTACK_USERNAME",
   "key": "BROWSERSTACK_ACCESS_KEY",
 
   "capabilities": {
@@ -8,6 +8,7 @@
       "buildName": "browserstack-build-1",
       "sessionName": "single_test",
       "browserVersion": "latest",
+      "source": "testng:sample-master-v1.0",
       "debug": true
     }
   },
