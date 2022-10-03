@@ -68,6 +68,7 @@ public class BrowserStackTestNGTest {
                 options.put("key", accessKey);
                 l.start(options);
             }
+            bstackOptionsMap.put("source", "testng:sample-master:v1.0");
         }
 
         driver = new RemoteWebDriver(
