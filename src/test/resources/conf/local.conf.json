@@ -6,7 +6,7 @@
   "capabilities": {
     "bstack:options": {
       "buildName": "browserstack-build-1",
-      "sessionName": "local_test",
+      "sessionName": "BStack local testng",
       "source": "testng:sample-master-v1.0",
       "debug": true,
       "local": true

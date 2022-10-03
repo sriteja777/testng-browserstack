@@ -6,7 +6,7 @@
   "capabilities": {
     "bstack:options": {
       "buildName": "browserstack-build-1",
-      "sessionName": "parallel_test",
+      "sessionName": "BStack parallel testng",
       "browserVersion": "latest",
       "source": "testng:sample-master-v1.0",
       "debug": true

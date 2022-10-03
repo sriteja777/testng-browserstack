@@ -6,7 +6,7 @@
   "capabilities": {
     "bstack:options": {
       "buildName": "browserstack-build-1",
-      "sessionName": "suite_test",
+      "sessionName": "BStack suite testng",
       "source": "testng:sample-master-v1.0",
       "debug": true
     }
