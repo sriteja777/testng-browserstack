@@ -15,7 +15,7 @@ public class BrowserStackRemoteTest {
     @BeforeMethod(alwaysRun = true)
     @SuppressWarnings("unchecked")
     public void setUp() throws Exception {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        MutableCapabilities capabilities = new MutableCapabilities();
         HashMap<String, String> bstackOptionsMap = new HashMap<String, String>();
         bstackOptionsMap.put("source", "testng:sample-sdk:v1.0");
         capabilities.setCapability("bstack:options", bstackOptionsMap);
