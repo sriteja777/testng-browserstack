@@ -1,6 +1,7 @@
 package com.browserstack;
 
 import java.net.URL;
+import java.util.HashMap;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -15,6 +16,9 @@ public class BrowserStackRemoteTest {
     @SuppressWarnings("unchecked")
     public void setUp() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        HashMap<String, String> bstackOptionsMap = new HashMap<String, String>();
+        bstackOptionsMap.put("source", "testng:sample-sdk:v1.0");
+        capabilities.setCapability("bstack:options", bstackOptionsMap);
         driver = new RemoteWebDriver(
                 new URL("https://hub.browserstack.com/wd/hub"), capabilities);
         }
