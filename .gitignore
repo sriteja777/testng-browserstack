@@ -6,3 +6,11 @@ local.log
 .gradle
 build/
 .DS_Store
+.classpath
+.project
+.settings
+browserstack.err
+gradle
+gradlew
+gradlew.bat
+test-output
