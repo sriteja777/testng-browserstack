@@ -84,16 +84,6 @@ public class BrowserStackTestNGTest {
             }
         }
 
-        username = System.getenv("BROWSERSTACK_USERNAME");
-        if (username == null) {
-            username = (String) config.get("user");
-        }
-
-        accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
-        if (accessKey == null) {
-            accessKey = (String) config.get("key");
-        }
-
         if (capabilities.getCapability("bstack:options") != null) {
             HashMap bstackOptionsMap = (HashMap) capabilities.getCapability("bstack:options");
             if ((bstackOptionsMap.get("local") != null &&
