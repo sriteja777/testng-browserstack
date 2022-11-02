@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Pool" parallel="tests">
+    <parameter name="config" value="suite.conf.json"/>
     <test name="PoolTestChrome" thread-count="3" parallel="classes">
-        <parameter name="config" value="suite.conf.json"/>
         <parameter name="environment" value="chrome"/>
         <classes>
             <class name="com.browserstack.suite.SuiteTest01"/>
@@ -19,7 +19,6 @@
     </test>
 
     <test name="PoolTestFirefox" thread-count="3" parallel="classes">
-        <parameter name="config" value="suite.conf.json"/>
         <parameter name="environment" value="firefox"/>
         <classes>
             <class name="com.browserstack.suite.SuiteTest01"/>
