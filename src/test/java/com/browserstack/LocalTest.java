@@ -6,9 +6,9 @@ import org.testng.annotations.Test;
 public class LocalTest extends BrowserStackRemoteTest {
 
     @Test
-    public void test() throws Exception {
-        driver.get("http://bs-local.com:45691/check");
+    public void test() {
+        driver.get("http://bs-local.com:45454/");
 
-        Assert.assertTrue(driver.getPageSource().contains("Up and running"));
+        Assert.assertTrue(driver.getTitle().contains("BrowserStack Local"));
     }
 }
