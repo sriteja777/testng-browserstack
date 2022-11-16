@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.browserstack</groupId>
@@ -18,6 +18,7 @@
         <surefire.version>2.19.1</surefire.version>
         <selenium.version>4.1.4</selenium.version>
         <json-simple.version>1.1.1</json-simple.version>
+        <surefire.plugin.version>3.0.0-M5</surefire.plugin.version>
         <config.file>config/sample-local-test.testng.xml</config.file>
     </properties>
 
@@ -31,12 +32,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.browserstack</groupId>
-            <artifactId>browserstack-java-sdk</artifactId>
-            <version>LATEST</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -57,14 +52,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${config.file}</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <argLine>
-                        -javaagent:${com.browserstack:browserstack-java-sdk:jar}
-                    </argLine>
-                </configuration>
+
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -89,9 +77,6 @@
                             <suiteXmlFiles>
                                 <suiteXmlFile>config/sample-local-test.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
-                            <argLine>
-                                -javaagent:${com.browserstack:browserstack-java-sdk:jar}
-                            </argLine>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -109,9 +94,7 @@
                             <suiteXmlFiles>
                                 <suiteXmlFile>config/sample-test.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
-                            <argLine>
-                                -javaagent:${com.browserstack:browserstack-java-sdk:jar}
-                            </argLine>
+
                         </configuration>
                     </plugin>
                 </plugins>
