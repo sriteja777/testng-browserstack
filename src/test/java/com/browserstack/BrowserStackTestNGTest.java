@@ -64,6 +64,7 @@ public class BrowserStackTestNGTest {
             HashMap bstackOptionsMap = (HashMap) capabilities.getCapability("bstack:options");
             bstackOptionsMap.put("source", "testng:sample-selenium-4:v1.0");
         }
+
         this.checkAndStartBrowserStackLocal(capabilities, accessKey);
 
         driver = new RemoteWebDriver(new URL("https://"+username+":"+accessKey+"@"+config.get("server")+"/wd/hub"), capabilities);
