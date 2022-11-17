@@ -27,7 +27,7 @@
 
     <test name="SingleTestIE">
         <parameter name="config" value="parallel.conf.json"/>
-        <parameter name="environment" value="ie"/>
+        <parameter name="environment" value="edge"/>
         <classes>
             <class name="com.browserstack.SingleTest"/>
         </classes>

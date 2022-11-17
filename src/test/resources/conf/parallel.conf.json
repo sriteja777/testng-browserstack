@@ -13,22 +13,22 @@
   },
   "environments": {
     "chrome": {
-      "browser": "chrome"
+      "browserName": "chrome"
     },
     "firefox": {
-      "browser": "firefox"
+      "browserName": "firefox"
     },
     "safari": {
-      "browser": "safari",
+      "browserName": "safari",
       "bstack:options": {
         "os": "OS X",
         "osVersion": "High Sierra"
       }
     },
-    "ie": {
-      "browser": "Internet Explorer",
+    "edge": {
+      "browserName": "edge",
       "bstack:options": {
-        "os": "Windows",
+        "os": "Windows"
       }
     }
   }

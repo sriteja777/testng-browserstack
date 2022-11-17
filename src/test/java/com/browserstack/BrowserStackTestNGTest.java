@@ -8,10 +8,11 @@ import java.util.Map;
 
 import com.browserstack.local.Local;
 
+import com.sun.org.apache.xpath.internal.objects.XString;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -29,7 +30,7 @@ public class BrowserStackTestNGTest {
         JSONObject config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + config_file));
         JSONObject envs = (JSONObject) config.get("environments");
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        MutableCapabilities capabilities = new MutableCapabilities();
 
         Map<String, Object> envCapabilities = (Map<String, Object>) envs.get(environment);
         Iterator<Map.Entry<String, Object>> it = envCapabilities.entrySet().iterator();
@@ -64,13 +65,18 @@ public class BrowserStackTestNGTest {
             HashMap bstackOptionsMap = (HashMap) capabilities.getCapability("bstack:options");
             bstackOptionsMap.put("source", "testng:sample-selenium-4:v1.0");
         }
+        else{
+            JSONObject bstackOptions = new JSONObject();
+            bstackOptions.put("source", "testng:sample-selenium-4:v1.0");
+            capabilities.setCapability("bstack:options", bstackOptions);
+        }
 
         this.checkAndStartBrowserStackLocal(capabilities, accessKey);
 
         driver = new RemoteWebDriver(new URL("https://"+username+":"+accessKey+"@"+config.get("server")+"/wd/hub"), capabilities);
     }
 
-    public void checkAndStartBrowserStackLocal(DesiredCapabilities capabilities, String accessKey) throws Exception {
+    public void checkAndStartBrowserStackLocal(MutableCapabilities capabilities, String accessKey) throws Exception {
         if (bsLocal != null) {
             return;
         }
