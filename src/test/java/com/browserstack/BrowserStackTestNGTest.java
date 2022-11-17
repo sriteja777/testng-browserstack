@@ -8,7 +8,6 @@ import java.util.Map;
 
 import com.browserstack.local.Local;
 
-import com.sun.org.apache.xpath.internal.objects.XString;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.MutableCapabilities;
@@ -64,8 +63,7 @@ public class BrowserStackTestNGTest {
         if (capabilities.getCapability("bstack:options") != null) {
             HashMap bstackOptionsMap = (HashMap) capabilities.getCapability("bstack:options");
             bstackOptionsMap.put("source", "testng:sample-selenium-4:v1.0");
-        }
-        else{
+        } else {
             JSONObject bstackOptions = new JSONObject();
             bstackOptions.put("source", "testng:sample-selenium-4:v1.0");
             capabilities.setCapability("bstack:options", bstackOptions);
