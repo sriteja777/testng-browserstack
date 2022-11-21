@@ -3,9 +3,6 @@ package com.browserstack;
 import java.net.URL;
 import java.util.HashMap;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.MutableCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.WebDriver;
