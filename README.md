@@ -61,6 +61,9 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 
 ## Using Gradle
 
+### Prerequisites
+- If using Gradle, Java v9+ is required.
+
 ### Run sample build
 
 - Clone the repository

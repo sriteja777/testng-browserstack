@@ -1,8 +1,5 @@
 package com.browserstack;
 
-import java.net.URL;
-import java.util.HashMap;
-
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.WebDriver;
