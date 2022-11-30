@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Local">
+    <parameter name="config" value="local.conf.json"/>
     <test name="LocalTest">
+<<<<<<< HEAD:config/sample-local-test.testng.xml
+=======
+        <parameter name="environment" value="chrome"/>
+>>>>>>> origin:config/local.testng.xml
         <classes>
             <class name="com.browserstack.LocalTest"/>
         </classes>
