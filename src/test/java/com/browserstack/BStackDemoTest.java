@@ -1,11 +1,11 @@
 package com.browserstack;
 
-import com.browserstack.BrowserStackRemoteTest;
+import com.browserstack.SeleniumTest;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BStackDemoTest extends BrowserStackRemoteTest {
+public class BStackDemoTest extends SeleniumTest {
     @Test
     public void addProductToCart() throws Exception {
         // navigate to bstackdemo
