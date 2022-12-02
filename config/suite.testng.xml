@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Pool" parallel="tests">
+    <parameter name="config" value="suite.conf.json"/>
     <test name="PoolTestChrome" thread-count="3" parallel="classes">
-        <parameter name="config" value="suite.conf.json"/>
         <parameter name="environment" value="chrome"/>
         <classes>
             <class name="com.browserstack.suite.SuiteTest01"/>
@@ -10,11 +10,6 @@
             <class name="com.browserstack.suite.SuiteTest03"/>
             <class name="com.browserstack.suite.SuiteTest04"/>
             <class name="com.browserstack.suite.SuiteTest05"/>
-            <class name="com.browserstack.suite.SuiteTest06"/>
-            <class name="com.browserstack.suite.SuiteTest07"/>
-            <class name="com.browserstack.suite.SuiteTest08"/>
-            <class name="com.browserstack.suite.SuiteTest09"/>
-            <class name="com.browserstack.suite.SuiteTest10"/>
         </classes>
     </test>
 
@@ -27,11 +22,6 @@
             <class name="com.browserstack.suite.SuiteTest03"/>
             <class name="com.browserstack.suite.SuiteTest04"/>
             <class name="com.browserstack.suite.SuiteTest05"/>
-            <class name="com.browserstack.suite.SuiteTest06"/>
-            <class name="com.browserstack.suite.SuiteTest07"/>
-            <class name="com.browserstack.suite.SuiteTest08"/>
-            <class name="com.browserstack.suite.SuiteTest09"/>
-            <class name="com.browserstack.suite.SuiteTest10"/>
         </classes>
     </test>
 </suite>

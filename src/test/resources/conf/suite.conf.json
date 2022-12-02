@@ -1,16 +1,16 @@
 {
-  "server": "hub-cloud.browserstack.com",
+  "server": "hub.browserstack.com",
   "user": "BROWSERSTACK_USERNAME",
   "key": "BROWSERSTACK_ACCESS_KEY",
+
   "capabilities": {
-    "browserstack.use_w3c": true,
     "bstack:options": {
-      "sessionName": "suite_test",
-      "buildName": "testng-browserstack",
-      "projectName": "My Awesome App",
+      "buildName": "browserstack-build-1",
+      "sessionName": "BStack suite testng",
       "debug": true
     }
   },
+
   "environments": {
     "chrome": {
       "browserName": "chrome"
@@ -19,17 +19,13 @@
       "browserName": "firefox"
     },
     "safari": {
-      "browserName": "safari",
       "bstack:options": {
-        "os": "OS X",
-        "osVersion": "High Sierra"
-      }
+        "os": "OS X"
+      },
+      "browserName": "safari"
     },
-    "edge": {
-      "browserName": "edge",
-      "bstack:options": {
-        "os": "Windows"
-      }
+    "ie": {
+      "browserName": "internet explorer"
     }
   }
 }
