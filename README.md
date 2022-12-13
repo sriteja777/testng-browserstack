@@ -4,20 +4,40 @@
 
 ![BrowserStack Logo](https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780)
 
-## Setup
+## Using Maven
+
+### Setup
 
 * Clone the repo
 * Install dependencies `mvn compile`
 * Update `*.conf.json` files inside the `src/test/resources/conf` directory with your [BrowserStack Username and Access Key](https://www.browserstack.com/accounts/settings)
 
-## Running your tests
+### Running your tests
 
 - To run a single test, run `mvn test -P single`
 - To run local tests, run `mvn test -P local`
 - To run parallel tests, run `mvn test -P parallel`
-- To run suite, run `mvn test -P suite`
+- To run the test suite, run `mvn test -P suite`
 
- Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
+Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
+
+
+## Using Gradle
+
+### Setup
+
+* Clone the repo
+* Install dependencies `gradle build`
+* Update `*.conf.json` files inside the `src/test/resources/conf` directory with your [BrowserStack Username and Access Key](https://www.browserstack.com/accounts/settings)
+
+### Running your tests
+
+- To run a single test, run `gradle singleTest`
+- To run local tests, run `gradle localTest`
+- To run parallel tests, run `gradle parallelTest`
+- To run the test suite, run `gradle suiteTest`
+
+Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
 
 
 ## Notes
@@ -29,6 +49,7 @@
   export BROWSERSTACK_USERNAME=<browserstack-username> &&
   export BROWSERSTACK_ACCESS_KEY=<browserstack-access-key>
   ```
+
 ## Additional Resources
 * [Documentation for writing Automate test scripts in Java](https://www.browserstack.com/automate/java)
 * [Customizing your tests on BrowserStack](https://www.browserstack.com/automate/capabilities)

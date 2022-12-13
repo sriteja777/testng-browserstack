@@ -4,3 +4,8 @@ local.log
 .idea
 *.iml
 logs/
+.gradle
+build/
+gradlew
+gradle/
+gradlew.bat
