@@ -6,8 +6,8 @@ local.log
 .gradle
 build/
 .DS_Store
-browserstack.err
-gradle/
+gradle
 gradlew
 gradlew.bat
-logs/
+logs
+browserstack.err
