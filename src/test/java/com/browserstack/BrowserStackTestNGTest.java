@@ -2,6 +2,7 @@ package com.browserstack;
 
 import java.io.FileReader;
 import java.net.URL;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -13,6 +14,7 @@ import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.http.ClientConfig;
 import org.testng.annotations.*;
 
 public class BrowserStackTestNGTest {
@@ -96,8 +98,13 @@ public class BrowserStackTestNGTest {
             bstackOptionsMap.put("source", "testng:sample-selenium-4:v1.1");
         }
 
-        driver = new RemoteWebDriver(
-                new URL("https://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"), capabilities);
+        ClientConfig customConfig = ClientConfig.defaultConfig().readTimeout(Duration.ofMinutes(15))
+            .connectionTimeout(Duration.ofMinutes(15));
+        driver = RemoteWebDriver.builder()
+            .config(customConfig)
+            .address(new URL("https://"+username+":"+accessKey+"@"+config.get("server")+"/wd/hub"))
+            .oneOf(capabilities)
+            .build();
     }
 
     @AfterMethod(alwaysRun = true)
