@@ -58,8 +58,11 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
             </plugin>
 ```
 * Install dependencies `mvn compile`
- 
- ## Using Gradle
+
+## Using Gradle
+
+### Prerequisites
+- If using Gradle, Java v9+ is required.
 
 ### Run sample build
 
@@ -69,14 +72,14 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
 - To run local tests, run `gradle sampleLocalTest`
 
 Understand how many parallel sessions you need by using our [Parallel Test Calculator](https://www.browserstack.com/automate/parallel-calculator?ref=github)
- 
- ### Integrate your test suite
- 
+
+### Integrate your test suite
+
 This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow the steps below to install the SDK in your test suite and run tests on BrowserStack:
 
 * Following are the changes required in `gradle.build` -
-  * Add `compileOnly 'com.browserstack:browserstack-java-sdk:latest.release'` in dependencies
-  * Fetch Artifact Information and add `jvmArgs` property in tasks *SampleTest* and *SampleLocalTest* :
+    * Add `compileOnly 'com.browserstack:browserstack-java-sdk:latest.release'` in dependencies
+    * Fetch Artifact Information and add `jvmArgs` property in tasks *SampleTest* and *SampleLocalTest* :
   ```
   def browserstackSDKArtifact = configurations.compileClasspath.resolvedConfiguration.resolvedArtifacts.find { it.name == 'browserstack-java-sdk' }
   
@@ -89,7 +92,7 @@ This repository uses the BrowserStack SDK to run tests on BrowserStack. Follow t
     }
   }
   ```
-  
+
 * Install dependencies `gradle build`
 
 
