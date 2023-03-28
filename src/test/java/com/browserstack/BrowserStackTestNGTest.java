@@ -95,7 +95,7 @@ public class BrowserStackTestNGTest {
                 options.put("key", accessKey);
                 l.start(options);
             }
-            bstackOptionsMap.put("source", "testng:sample-selenium-4:v1.1");
+            bstackOptionsMap.put("source", "testng:sample-selenium-4:v1.2");
         }
 
         ClientConfig customConfig = ClientConfig.defaultConfig().readTimeout(Duration.ofMinutes(15))
