@@ -54,7 +54,7 @@
                 <version>${surefire.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>config/single.testng.xml</suiteXmlFile>
+                        <suiteXmlFile>config/parallel.testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
