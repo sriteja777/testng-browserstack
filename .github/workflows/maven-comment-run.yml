@@ -4,8 +4,7 @@
 name: TestNG SDK Test workflow for Maven on comment RUN_TESTS
 
 on:
-  - push
-  - issue_comment:
+  issue_comment:
       branches: [ "test-gh-workflow" ]
       types: [ created ]
 
