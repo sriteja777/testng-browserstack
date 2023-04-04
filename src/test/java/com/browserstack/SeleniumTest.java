@@ -12,6 +12,7 @@ public class SeleniumTest {
     @BeforeMethod(alwaysRun = true)
     @SuppressWarnings("unchecked")
     public void setUp() throws Exception {
+        System.out.println("TESTING... PR");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
