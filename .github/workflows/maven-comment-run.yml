@@ -5,12 +5,12 @@ name: TestNG SDK Test workflow for Maven on comment RUN_TESTS
 
 on:
   issue_comment:
-      branches: [ "test-gh-workflow" ]
+      branches: [ "master" ]
       types: [ created ]
 
 jobs:
   comment-run:
-    if: contains(github.event.comment.body, 'RUN_TESTS') && github.event.issue.pull_request
+    if: github.event.issue.pull_request && contains(github.event.comment.body, 'RUN_TESTS')
     runs-on: ${{ matrix.os }}
     continue-on-error: true
     strategy:
