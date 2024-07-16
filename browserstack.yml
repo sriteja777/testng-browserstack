@@ -84,4 +84,4 @@ logLevel: debug
 percy: true
 percyCaptureMode: auto
 percyOptions:
-  binaryPath: percy_binary/percy.exe
+  binarypath: percy_binary/percy.exe
