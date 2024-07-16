@@ -61,9 +61,7 @@ source: testng:sample-master:v1.1
 # ==========================================
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstackLocal: true # <boolean> (Default false)
-percy: true
-percyCaptureMode: auto
+browserstackLocal: false # <boolean> (Default false)
 
 # Options to be passed to BrowserStack local in-case of advanced configurations
 # browserStackLocalOptions:
@@ -82,6 +80,7 @@ consoleLogs: errors # <string> Remote browser's console debug levels to be print
 # Test Observability is an intelligent test reporting & debugging product. It collects data using the SDK. Read more about what data is collected at https://www.browserstack.com/docs/test-observability/references/terms-and-conditions
 # Visit observability.browserstack.com to see your test reports and insights. To disable test observability, specify `testObservability: false` in the key below.
 testObservability: true
+logLevel: debug
 percy: true
 percyCaptureMode: auto
 percyOptions:
