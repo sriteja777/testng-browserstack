@@ -34,13 +34,13 @@ platforms:
     osVersion: Big Sur
     browserName: Chrome
     browserVersion: latest
-  - os: Windows
-    osVersion: 10
-    browserName: Edge
-    browserVersion: latest
-  - deviceName: Samsung Galaxy S22 Ultra
-    browserName: chrome # Try 'samsung' for Samsung browser
-    osVersion: 12.0
+  # - os: Windows
+  #   osVersion: 10
+  #   browserName: Edge
+  #   browserVersion: latest
+  # - deviceName: Samsung Galaxy S22 Ultra
+  #   browserName: chrome # Try 'samsung' for Samsung browser
+  #   osVersion: 12.0
     
 # =======================
 # Parallels per Platform
@@ -82,3 +82,7 @@ consoleLogs: errors # <string> Remote browser's console debug levels to be print
 # Test Observability is an intelligent test reporting & debugging product. It collects data using the SDK. Read more about what data is collected at https://www.browserstack.com/docs/test-observability/references/terms-and-conditions
 # Visit observability.browserstack.com to see your test reports and insights. To disable test observability, specify `testObservability: false` in the key below.
 testObservability: true
+percy: true
+percyCaptureMode: auto
+percyOptions:
+  binaryPath: percy_binary/percy.exe
