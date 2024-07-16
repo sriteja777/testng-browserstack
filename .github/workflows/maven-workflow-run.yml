@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       max-parallel: 6
       matrix:
-        java: [ '11', ]
+        java: [ '11' ]
         os: [ 'macos-latest', 'windows-latest' ]
     name: TestNG Repo ${{ matrix.Java }} - ${{ matrix.os }} Sample
     env:
@@ -64,6 +64,12 @@ jobs:
         run: |
           mvn compile
           mvn test -P sample-test
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: |
+            logs
       - if: always()
         uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975
         id: status-check-completed
