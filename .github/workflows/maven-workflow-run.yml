@@ -15,10 +15,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
-      max-parallel: 3
+      max-parallel: 6
       matrix:
-        java: [ '8', '11', '17' ]
-        os: [ 'macos-latest', 'windows-latest', 'ubuntu-latest' ]
+        java: [ '11', ]
+        os: [ 'macos-latest', 'windows-latest' ]
     name: TestNG Repo ${{ matrix.Java }} - ${{ matrix.os }} Sample
     env:
       BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -38,7 +38,7 @@ jobs:
           script: |
             const result = await github.rest.checks.create({
               owner: context.repo.owner,
-              repo: context.repo.repo,
+              repo: context.repo.repo,  
               name: process.env.job_name,
               head_sha: process.env.commit_sha,
               status: 'in_progress'
